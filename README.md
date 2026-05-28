@@ -13,24 +13,6 @@ FEATURES
 - Resource Efficient: Uses standard time delays to ensure minimal CPU and RAM usage.
 - Graceful Termination: Intercepts standard termination signals to close cleanly without raising unhandled traceback exceptions.
 
-CODE BREAKDOWN
---------------
-import pyautogui
-import time
-
-INTERVAL = 5  # Configured interval in seconds
-
-try:
-    print("Keeping Teams active. Press stop to end.")
-    while True:
-        x, y = pyautogui.position()  # Records base coordinates
-        pyautogui.moveTo(x + 10, y)  # Jiggles 10 pixels right
-        time.sleep(0.1)               # Holds for visibility
-        pyautogui.moveTo(x, y)       # Returns to origin
-        time.sleep(INTERVAL)         # Internal loop cooling delay
-except KeyboardInterrupt:
-    print("Script stopped.")
-
 
 REQUIREMENTS AND INSTALLATION
 -----------------------------
